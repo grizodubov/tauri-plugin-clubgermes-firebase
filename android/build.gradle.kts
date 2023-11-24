@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
-
+//123
 android {
     namespace = "com.plugin.clubgermes-firebase"
     compileSdk = 32
