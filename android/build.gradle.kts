@@ -2,14 +2,14 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
-//123
+
 android {
     namespace = "com.plugin.clubgermes-firebase"
-    compileSdk = 32
+    compileSdk = 34
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 33
+        minSdk = 24
+        targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
