@@ -1,4 +1,4 @@
-package com.plugin.clubgermes-firebase
+package ru.clubgermes.social.plugin_firebase
 
 import org.junit.Test
 

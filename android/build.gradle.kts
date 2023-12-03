@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.plugin.clubgermes-firebase"
+    namespace = "ru.clubgermes.social.plugin_firebase"
     compileSdk = 34
 
     defaultConfig {

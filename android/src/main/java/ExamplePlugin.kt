@@ -1,4 +1,4 @@
-package com.plugin.clubgermes-firebase
+package ru.clubgermes.social.plugin_firebase
 
 import android.app.Activity
 import app.tauri.annotation.Command
