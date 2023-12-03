@@ -1,1 +1,1 @@
-# Tauri Plugin clubgermes-firebase
+# Tauri Plugin clubgermesfirebase

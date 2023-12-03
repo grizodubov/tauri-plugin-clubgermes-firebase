@@ -24,7 +24,7 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
   Ok(ClubgermesFirebase(handle))
 }
 
-/// Access to the clubgermes-firebase APIs.
+/// Access to the clubgermesfirebase APIs.
 pub struct ClubgermesFirebase<R: Runtime>(PluginHandle<R>);
 
 impl<R: Runtime> ClubgermesFirebase<R> {

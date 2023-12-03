@@ -1,3 +1,3 @@
-# Tauri Plugin clubgermes-firebase
+# Tauri Plugin clubgermesfirebase
 
 A description of this package.
