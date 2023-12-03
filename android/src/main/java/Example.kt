@@ -1,4 +1,4 @@
-package ru.clubgermes.social.plugin_firebase
+package ru.clubgermes.social.plugin.firebase
 
 import android.util.Log
 

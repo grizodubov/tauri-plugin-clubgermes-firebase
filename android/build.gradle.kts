@@ -4,8 +4,8 @@ plugins {
 }
 
 android {
-    namespace = "ru.clubgermes.social.plugin_firebase"
-    compileSdk = 34
+    namespace = "ru.clubgermes.social.plugin.firebase"
+    compileSdk = 32
 
     defaultConfig {
         minSdk = 24
@@ -42,5 +42,4 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation(project(":tauri-android"))
-    implementation(kotlin("script-runtime"))
 }

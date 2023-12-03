@@ -26,27 +26,27 @@ use mobile::ClubgermesFirebase;
 #[derive(Default)]
 struct MyState(Mutex<HashMap<String, String>>);
 
-/// Extensions to [`tauri::App`], [`tauri::AppHandle`] and [`tauri::Window`] to access the clubgermesfirebase APIs.
+/// Extensions to [`tauri::App`], [`tauri::AppHandle`] and [`tauri::Window`] to access the clubgermes-firebase APIs.
 pub trait ClubgermesFirebaseExt<R: Runtime> {
-  fn clubgermesfirebase(&self) -> &ClubgermesFirebase<R>;
+  fn clubgermes_firebase(&self) -> &ClubgermesFirebase<R>;
 }
 
 impl<R: Runtime, T: Manager<R>> crate::ClubgermesFirebaseExt<R> for T {
-  fn clubgermesfirebase(&self) -> &ClubgermesFirebase<R> {
+  fn clubgermes_firebase(&self) -> &ClubgermesFirebase<R> {
     self.state::<ClubgermesFirebase<R>>().inner()
   }
 }
 
 /// Initializes the plugin.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
-  Builder::new("clubgermesfirebase")
+  Builder::new("clubgermes-firebase")
     .invoke_handler(tauri::generate_handler![commands::execute])
     .setup(|app, api| {
       #[cfg(mobile)]
-      let clubgermesfirebase = mobile::init(app, api)?;
+      let clubgermes_firebase = mobile::init(app, api)?;
       #[cfg(desktop)]
-      let clubgermesfirebase = desktop::init(app, api)?;
-      app.manage(clubgermesfirebase);
+      let clubgermes_firebase = desktop::init(app, api)?;
+      app.manage(clubgermes_firebase);
 
       // manage state so it is accessible by the commands
       app.manage(MyState::default());

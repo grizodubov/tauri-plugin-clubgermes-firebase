@@ -10,7 +10,7 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
   Ok(ClubgermesFirebase(app.clone()))
 }
 
-/// Access to the clubgermesfirebase APIs.
+/// Access to the clubgermes-firebase APIs.
 pub struct ClubgermesFirebase<R: Runtime>(AppHandle<R>);
 
 impl<R: Runtime> ClubgermesFirebase<R> {
