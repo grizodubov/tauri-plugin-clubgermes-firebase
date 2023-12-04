@@ -1,66 +1,48 @@
 package ru.clubgermes.social.plugin.firebase
 
-import android.util.Log
-import com.google.firebase.messaging.FirebaseMessagingService
-import com.google.firebase.messaging.RemoteMessage
+import android.webkit.WebView
+import android.app.Activity
+import app.tauri.annotation.Command
+import app.tauri.annotation.InvokeArg
+import app.tauri.annotation.TauriPlugin
 import app.tauri.plugin.JSObject
+import app.tauri.plugin.Plugin
+import app.tauri.plugin.Invoke
 import app.tauri.plugin.Channel
+import android.util.Log
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.FirebaseApp
+import com.google.android.gms.tasks.OnCompleteListener
 
-class PushNotificationsService(): FirebaseMessagingService()  {
+@InvokeArg
+class RegisterPushNotificationHandlerArgs {
+  lateinit var handler: Channel
+}
 
-    /**
-     * Called if InstanceID token is updated. This may occur if the security of
-     * the previous token had been compromised. Note that this is called when the InstanceID token
-     * is initially generated so this is where you would retrieve the token.
-     */
-    override fun onNewToken(token: String) {
-        super.onNewToken(token)
-        Log.i("PushNotificationsService ", "Refreshed token :: $token")
-        // If you want to send messages to this application instance or
-        // manage this apps subscriptions on the server side, send the
-        // Instance ID token to your app server.
-        sendRegistrationToServer(token)
-    }
-
-    private fun sendRegistrationToServer(token: String) {
-        // TODO : send token to tour server
-    }
-
+@TauriPlugin
+class PushNotificationsPlugin(private val activity: Activity): Plugin(activity) {
 
     companion object {
-        init {
-            System.loadLibrary("tauri_app_lib")
-        }
+        var channel: Channel? = null
     }
 
-    override fun onMessageReceived(message: RemoteMessage) {
-        super.onMessageReceived(message)
-        Log.i("PushNotificationService ", "Message :: $message")
+    @Command
+    fun registerPushNotificationHandler(invoke: Invoke) {
+        Log.w("registerPushNotificationHandler", "")
+        val args = invoke.parseArgs(RegisterPushNotificationHandlerArgs::class.java)
+        PushNotificationsPlugin.channel = args.handler
+        invoke.resolve()
+    }
 
-        val data = JSObject()
-
-        for (entry in message.data.entries.iterator()) {
-            data.put(entry.key, entry.value)
-        }
-
-        val message = JSObject()
-        message.put("data", data)
-
-        var tries = 0;
-
-        if (PushNotificationsPlugin.channel == null){
-            runn()
-
-            while (PushNotificationsPlugin.channel == null && tries < 60) {
-                Thread.sleep(500)  // wait for 1 second
-                tries += 1
-
-                Log.e("channel is ", "null")
+    override fun load(webView: WebView) {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (task.isSuccessful) {
+                // Get new FCM registration token
+                val token = task.result
+                Log.e("myToken", "" + token)
+            } else {
+                Log.w("Fetching FCM registration token failed", task.exception)
             }
-        }
-
-        PushNotificationsPlugin.channel?.send(message)
+        })
     }
-
-    private external fun runn()
 }
