@@ -27,11 +27,11 @@ class PushNotificationsService(): FirebaseMessagingService()  {
     }
 
 
-    companion object {
+/*    companion object {
         init {
             System.loadLibrary("tauri_app_lib")
         }
-    }
+    }*/
 
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
