@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "ru.clubgermes.social.plugin.firebase"
-    compileSdk = 32
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
