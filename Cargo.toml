@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-clubgermes-firebase"
-version = "0.0.1"
+version = "0.0.0"
 authors = [ "You" ]
 description = ""
 edition = "2021"
