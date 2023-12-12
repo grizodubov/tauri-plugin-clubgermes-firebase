@@ -3,7 +3,7 @@ package ru.clubgermes.social.plugin.firebase
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 
-class PushNotificationsService : FirebaseMessagingService() {
+class `PushNotificationsService.kt` : FirebaseMessagingService() {
 
     // [START on_new_token]
     /**
