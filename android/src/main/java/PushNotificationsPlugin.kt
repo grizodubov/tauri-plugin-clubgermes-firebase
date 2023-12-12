@@ -16,14 +16,15 @@ import com.google.android.gms.tasks.OnCompleteListener
 
 @InvokeArg
 class RegisterPushNotificationHandlerArgs {
-  lateinit var handler: Channel
+    lateinit var handler: Channel
 }
 
 @TauriPlugin
-class PushNotificationsPlugin(private val activity: Activity): Plugin(activity) {
+class PushNotificationsPlugin(private val activity: Activity) : Plugin(activity) {
 
     companion object {
         var channel: Channel? = null
+        private const val TAG = "PushNotificationsPlugin"
     }
 
     @Command
@@ -36,13 +37,14 @@ class PushNotificationsPlugin(private val activity: Activity): Plugin(activity) 
 
     override fun load(webView: WebView) {
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
-            if (task.isSuccessful) {
-                // Get new FCM registration token
-                val token = task.result
-                Log.e("myToken", "" + token)
-            } else {
-                Log.w("Fetching FCM registration token failed", task.exception)
+            if (!task.isSuccessful) {
+                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
             }
+
+            // Get new FCM registration token
+            val token = task.result
+            Log.e("myToken", "" + token)
         })
     }
 }
