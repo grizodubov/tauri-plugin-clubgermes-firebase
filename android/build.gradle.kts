@@ -1,15 +1,14 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "ru.clubgermes.social.plugin.firebase"
-    compileSdk = 34
+    namespace = "ru.clubgermes.social.plugin_firebase"
+    compileSdk = 32
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
         targetSdk = 33
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -35,9 +34,7 @@ android {
 }
 
 dependencies {
-    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-messaging")
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.0")
     implementation("com.google.android.material:material:1.7.0")
