@@ -1,19 +1,13 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-<<<<<<< HEAD
-=======
     id("com.google.gms.google-services")
->>>>>>> 273fbb6 (second ;-) commit)
 }
 
 android {
     namespace = "ru.clubgermes.social.plugin_firebase"
-<<<<<<< HEAD
     compileSdk = 32
-=======
     compileSdk = 34
->>>>>>> 273fbb6 (second ;-) commit)
 
     defaultConfig {
         minSdk = 21
@@ -43,11 +37,10 @@ android {
 
 dependencies {
 
-<<<<<<< HEAD
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.0")
     implementation("com.google.android.material:material:1.7.0")
-=======
+
     // Import the Firebase BoM (see: https://firebase.google.com/docs/android/learn-more#bom)
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
 
@@ -71,16 +64,15 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("com.google.firebase:firebase-messaging-ktx:23.4.0")
->>>>>>> 273fbb6 (second ;-) commit)
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation(project(":tauri-android"))
-<<<<<<< HEAD
+
 }
-=======
+
 
 }
 
 apply(plugin = "com.google.gms.google-services")
->>>>>>> 273fbb6 (second ;-) commit)

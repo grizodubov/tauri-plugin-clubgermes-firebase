@@ -1,17 +1,13 @@
-<<<<<<< HEAD
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { internalIpV4Sync } from 'internal-ip'
-=======
 import {defineConfig} from "vite";
 import {svelte} from "@sveltejs/vite-plugin-svelte";
 import {internalIpV4Sync} from 'internal-ip'
->>>>>>> 273fbb6 (second ;-) commit)
 
 const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
 
 // https://vitejs.dev/config/
-<<<<<<< HEAD
 export default defineConfig({
   plugins: [svelte()],
 
@@ -30,7 +26,6 @@ export default defineConfig({
     } : undefined,
   },
 })
-=======
 export default defineConfig(async () => {
     return {
         plugins: [svelte()],
@@ -51,4 +46,3 @@ export default defineConfig(async () => {
         },
     }
 });
->>>>>>> 273fbb6 (second ;-) commit)

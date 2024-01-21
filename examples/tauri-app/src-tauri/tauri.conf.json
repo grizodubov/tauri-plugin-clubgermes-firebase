@@ -35,12 +35,9 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-<<<<<<< HEAD
-=======
       "iOS": {
         "developmentTeam": "XRF3344MB3"
       },
->>>>>>> 273fbb6 (second ;-) commit)
       "resources": [],
       "shortDescription": "",
       "targets": "all",
