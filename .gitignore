@@ -9,6 +9,12 @@ package-lock.json
 yarn.lock
 
 /.tauri
+<<<<<<< HEAD
 /target/
 Cargo.lock
 node_modules/
+=======
+/target
+#Cargo.lock
+node_modules/
+>>>>>>> 273fbb6 (second ;-) commit)

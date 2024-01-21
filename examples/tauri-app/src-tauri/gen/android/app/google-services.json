@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "983555641276",
+    "project_id": "test-tauri-app",
+    "storage_bucket": "test-tauri-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983555641276:android:aa3490b33a25ee818ca5b9",
+        "android_client_info": {
+          "package_name": "com.google.firebase.quickstart.fcm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBzb110QmRTcr_89GzzgDq46ssphl0TIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983555641276:android:d8d6968e32acd4bf8ca5b9",
+        "android_client_info": {
+          "package_name": "com.tauri.tauri_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBzb110QmRTcr_89GzzgDq46ssphl0TIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
