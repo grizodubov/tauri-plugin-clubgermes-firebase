@@ -6,10 +6,13 @@ settings:
 
 dependencies:
   '@tauri-apps/api':
-    specifier: next
+    specifier: ^2.0.0-alpha.14
     version: 2.0.0-alpha.14
+  '@tauri-apps/plugin-notification':
+    specifier: github:tauri-apps/tauri-plugin-notification#v2
+    version: github.com/tauri-apps/tauri-plugin-notification/9af993de6392048b3adca17be8f8e54ebf5304ff
   tauri-plugin-clubgermes-firebase-api:
-    specifier: link:../..
+    specifier: ../..
     version: link:../..
 
 devDependencies:
@@ -67,6 +70,11 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@tauri-apps/api@2.0.0-alpha.13:
+    resolution: {integrity: sha512-sGgCkFahF3OZAHoGN5Ozt9WK7wJlbVZSgWpPQKNag4nSOX1+Py6VDRTEWriiJHDiV+gg31CWHnNXRy6TFoZmdA==}
+    engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+    dev: false
 
   /@tauri-apps/api@2.0.0-alpha.14:
     resolution: {integrity: sha512-j9WxOIsNqt+0CypY8wu0dSsTJJQw3H37yIdyYsgrjvHgJ/yQB0AAbOFBo6+v3C/fZ35ydswgeFCBEoeK9NC7QA==}
@@ -713,3 +721,11 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  github.com/tauri-apps/tauri-plugin-notification/9af993de6392048b3adca17be8f8e54ebf5304ff:
+    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-notification/tar.gz/9af993de6392048b3adca17be8f8e54ebf5304ff}
+    name: '@tauri-apps/plugin-notification'
+    version: 2.0.0-alpha.5
+    dependencies:
+      '@tauri-apps/api': 2.0.0-alpha.13
+    dev: false

@@ -19,6 +19,7 @@ tauri-build = { version = "2.0.0-alpha.14", features = [] }
 
 [dependencies]
 tauri = { version = "2.0.0-alpha.21", features = [] }
+tauri-plugin-notification = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v2" }
 tauri-plugin-clubgermes-firebase = { path = "../../../" }
 
 [features]

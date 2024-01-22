@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^2.0.0-alpha.14",
+    "@tauri-apps/plugin-notification": "github:tauri-apps/tauri-plugin-notification#v2",
     "tauri-plugin-clubgermes-firebase-api": "../.."
   },
   "devDependencies": {

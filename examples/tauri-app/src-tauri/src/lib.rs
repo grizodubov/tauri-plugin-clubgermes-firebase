@@ -44,6 +44,7 @@ impl AppBuilder {
                 Ok(())
             })
             .invoke_handler(tauri::generate_handler![greet])
+            .plugin(tauri_plugin_notification::init())
             .plugin(tauri_plugin_clubgermes_firebase::init())
             .run(tauri::generate_context!())
             .expect("error while running tauri application");

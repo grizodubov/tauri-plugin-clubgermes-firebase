@@ -2,6 +2,8 @@
     import Greet from './lib/Greet.svelte'
     import {execute} from 'tauri-plugin-clubgermes-firebase-api'
 
+    import {sendNotification} from "./helpers/notifications-test";
+
     import {getMyToken} from 'tauri-plugin-clubgermes-firebase-api'
 
     let myFCMToken = ''
@@ -59,9 +61,20 @@
     </p>
 
     <div>
+        <button class="btn" id="notification" on:click={sendNotification}>
+            Send test notification
+        </button>
+    </div>
+
+    <p>
+
+    </p>
+
+    <div>
         <button on:click="{_executeToken}">Get FCM token</button>
         <div>{@html myFCMToken}</div>
     </div>
+
 </main>
 
 <style>
